@@ -1,26 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC } from 'react'
+import { Route, Switch } from 'react-router-dom'
+import { Layout } from 'components/Layout'
+import { HomePage, HOME_ROUTE } from 'pages/Home'
+import { NotFoundPage, NOT_FOUND_ROUTE } from 'pages/NotFound'
+import { GlobalStyles } from 'styles/global'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+export const App: FC = () => (
+  <Layout>
+    <GlobalStyles />
+    <Switch>
+      <Route path={HOME_ROUTE} exact component={HomePage} />
+      <Route path={NOT_FOUND_ROUTE} component={NotFoundPage} />
+    </Switch>
+  </Layout>
+)
