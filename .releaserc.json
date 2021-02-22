@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/git",
+      {
+        "assets": ["package.json"]
+      }
+    ]
+  ],
+  "branches": ["master"]
+}
