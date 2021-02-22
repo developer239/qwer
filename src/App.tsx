@@ -9,8 +9,8 @@ export const App: FC = () => (
   <Layout>
     <GlobalStyles />
     <Switch>
-      <Route path={NOT_FOUND_ROUTE} component={NotFoundPage} />
       <Route path={HOME_ROUTE} exact component={HomePage} />
+      <Route path={NOT_FOUND_ROUTE} component={NotFoundPage} />
     </Switch>
   </Layout>
 )
